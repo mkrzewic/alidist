@@ -11,6 +11,7 @@ requires:
   - "MySQL:slc7.*"
   - GCC-Toolchain:(?!osx)
 build_requires:
+  - pythia
   - CMake
   - "Xcode:(osx.*)"
 env:
@@ -110,6 +111,7 @@ else
         -Dshadowpw=OFF                                            \
         -Dvdt=ON                                                  \
         -Dbuiltin_vdt=ON                                          \
+        -DPYTHIA8=$PYTHIA_ROOT                                    \
         -DCMAKE_PREFIX_PATH="$FREETYPE_ROOT;$SYS_OPENSSL_ROOT;$GSL_ROOT;$ALIEN_RUNTIME_ROOT;$PYTHON_ROOT;$PYTHON_MODULES_ROOT"
   FEATURES="builtin_pcre mathmore xml ssl opengl minuit2 http
             pythia6 roofit soversion vdt ${CXX11:+cxx11} ${CXX14:+cxx14} ${XROOTD_ROOT:+xrootd}
